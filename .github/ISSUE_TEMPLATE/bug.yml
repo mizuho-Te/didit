@@ -1,0 +1,35 @@
+name: Bug report
+description: Report an unexpected result or CLI failure.
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Remove secrets and private repository information. Do not post security vulnerabilities here; follow SECURITY.md. These templates do not establish a private reporting channel.
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: didit version/commit, Node and Git versions, OS, shell, and invocation
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproduction
+      description: Sanitized commands, a small diff, and relevant configuration
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What should have happened?
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: Actual stdout, stderr, and exit code; do not infer success from missing output
+    validations:
+      required: true

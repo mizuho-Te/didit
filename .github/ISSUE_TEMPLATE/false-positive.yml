@@ -1,0 +1,35 @@
+name: False-positive report
+description: Explain a legitimate change that was flagged.
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Remove secrets and private repository information. Do not post security vulnerabilities here; follow SECURITY.md. These templates do not establish a private reporting channel.
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment and command
+      description: didit version/commit, OS, Node/Git versions, and exact invocation
+    validations:
+      required: true
+  - type: textarea
+    id: finding
+    attributes:
+      label: Finding
+      description: Rule ID, severity, and sanitized output
+    validations:
+      required: true
+  - type: textarea
+    id: diff
+    attributes:
+      label: Minimal diff and configuration
+      description: Include enough before/after context to reproduce; remove private content
+    validations:
+      required: true
+  - type: textarea
+    id: reason
+    attributes:
+      label: Why the change is legitimate
+      description: Expected behavior and an explanation of the intended change
+    validations:
+      required: true

@@ -1,0 +1,35 @@
+name: New rule proposal
+description: Suggest a narrowly scoped verification-weakening pattern.
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Remove secrets and private repository information. Do not post security vulnerabilities here; follow SECURITY.md. These templates do not establish a private reporting channel.
+  - type: textarea
+    id: background
+    attributes:
+      label: Problem and scope
+      description: Language, file types, proposed rule ID/severity, and why human review helps
+    validations:
+      required: true
+  - type: textarea
+    id: positive
+    attributes:
+      label: Two positive examples
+      description: At least two minimal changes that should be detected
+    validations:
+      required: true
+  - type: textarea
+    id: negative
+    attributes:
+      label: Two negative examples
+      description: At least two legitimate or unchanged examples that must not be detected
+    validations:
+      required: true
+  - type: textarea
+    id: limits
+    attributes:
+      label: Limitations and suppression
+      description: Likely false positives, boundaries, and what an intentional change looks like
+    validations:
+      required: true
