@@ -47,10 +47,17 @@ export async function runCommand(
   }
   child.stdout.on('data', capture);
   child.stderr.on('data', capture);
+  // Reuse the same operation across timeout, abort, exit, and final cleanup.
+  // Re-signalling an already terminated group can fail while it is being reaped.
+  let termination: Promise<void> | undefined;
+  function terminate(): Promise<void> {
+    termination ??= killProcessTree(child.pid);
+    return termination;
+  }
   let stop: () => void = () => undefined;
   const completion = new Promise<number | null>((resolve, reject) => {
     stop = () => {
-      void killProcessTree(child.pid).catch(reject);
+      void terminate().catch(reject);
     };
     child.once('error', reject);
     child.once('exit', stop);
@@ -83,7 +90,7 @@ export async function runCommand(
   } finally {
     clearTimeout(timer);
     signal?.removeEventListener('abort', stop);
-    await killProcessTree(child.pid);
+    await terminate();
   }
 }
 type ResolvedConfig = ReturnType<typeof resolveConfig>;
