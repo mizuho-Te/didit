@@ -16,9 +16,10 @@ function executeGitBuffer(
   cwd: string,
   args: readonly string[],
   diagnosticArgs: readonly string[] = args,
+  input?: Buffer,
 ): Promise<Buffer> {
   return new Promise((resolve, reject) => {
-    execFile(
+    const child = execFile(
       'git',
       [
         '--no-pager',
@@ -52,6 +53,12 @@ function executeGitBuffer(
         } else resolve(stdout);
       },
     );
+    if (input && child.stdin) {
+      child.stdin.on('error', (error: Error) => {
+        reject(new GitError(null, error.message, diagnosticArgs));
+      });
+      child.stdin.end(input);
+    }
   });
 }
 
@@ -91,4 +98,13 @@ export async function git(
   args: readonly string[],
 ): Promise<string> {
   return (await gitBuffer(cwd, args)).toString('utf8');
+}
+
+/** Send only generated object IDs to Git's line-oriented batch protocol. */
+export function gitInputBuffer(
+  cwd: string,
+  args: readonly string[],
+  input: Buffer,
+): Promise<Buffer> {
+  return executeGitBuffer(cwd, args, args, input);
 }

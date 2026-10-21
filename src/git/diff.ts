@@ -2,7 +2,11 @@ import { gitErrors } from '../i18n/git-errors.js';
 import { classifyLanguage, isExcluded, isTestFile } from '../diff/classify.js';
 import { addedHunks, parseUnifiedDiff } from '../diff/parse.js';
 import type { FileDiff, FileStatus } from '../rules/types.js';
-import { getContentBuffer, getContentSize } from './content.js';
+import {
+  getContentBuffer,
+  getContentSize,
+  prepareContents,
+} from './content.js';
 import { git } from './exec.js';
 import type { ResolvedRange } from './range.js';
 
@@ -87,6 +91,7 @@ export async function collectDiffs(
     (file) =>
       isProtectedConfig(file) || !isExcluded(file.path, options.exclude),
   );
+  await prepareContents(range, all, (options.maxFileSizeKb ?? 1024) * 1024);
   const untrackedNames = new Set(untracked.split('\0'));
   const accepted = new Map<FileDiff, boolean>();
   let next = 0;
