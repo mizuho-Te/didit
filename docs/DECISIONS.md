@@ -149,3 +149,12 @@
 - Related: SPEC local/static inspection; final security review
 - Decision: Disable Git fsmonitor, hooks, and pagers in the invocation wrapper. For working-tree diff/status, enumerate configured clean/process/required filter keys and override them locally without changing repository configuration. Existing external-diff/textconv and checkout smudge protections remain.
 - Verification: A synthetic executable marker proves ordinary Git invokes configured fsmonitor/clean helpers while didit's static scan does not. Configured process and external-diff helpers are also covered. GitError retains the caller's original arguments.
+
+## D-020 Preserve LF during Windows checkouts
+
+- Date: 2026-10-21
+- Related: SPEC 15.1; hosted Windows CI
+- Decision: Add `* text=auto eol=lf` to `.gitattributes`. Preserve the existing Prettier configuration, all tests, coverage thresholds, and CI checks. Binary assets remain automatically detected.
+- Evidence: [Windows Node 20 job](https://github.com/mizuho-Te/didit/actions/runs/39676922805/job/119489091890) at c7a4313bcacf25347bf4796786a0797884ee2202 built successfully, then failed Prettier on 146 files before typecheck/tests ran. A Linux-hosted local checkout with `core.autocrlf=true` reproduced exactly 146 formatting failures; adding only the attribute and making a fresh checkout passed Prettier. The runner log does not print its autocrlf setting, so that exact runner setting is inferred, not directly observed.
+- Sources: [Prettier end-of-line guidance](https://prettier.io/docs/options#end-of-line) recommends this attribute; [Git attributes](https://git-scm.com/docs/gitattributes) explains checkout normalization. A new hosted Windows run is still required to verify the full suite.
+- Publication facts: The GitHub source preview is public and its private vulnerability-reporting route is enabled. npm remains unpublished; these facts do not imply all CI platforms passed.

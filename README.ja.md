@@ -12,7 +12,7 @@ Git の差分から、テストのスキップ、判定条件の緩和、エラ�
 
 ## ローカルプレビューを試す
 
-**npm 未公開のプレビュー**です。パッケージ名の所有権は未確認なので、レジストリから `npx didit` を取得しないでください。別のパッケージを実行する可能性があります。Node.js 20 以上、Git 2.30 以上が必要です。
+**[GitHub で公開中のプレビュー](https://github.com/mizuho-Te/didit)**です。npm には公開していません。パッケージ名の所有権は未確認なので、レジストリから `npx didit` を取得しないでください。別のパッケージを実行する可能性があります。Node.js 20 以上、Git 2.30 以上が必要です。
 
 信頼できるチェックアウトで実行します。
 
@@ -139,7 +139,7 @@ it.skip('physical device handshake', () => {});
 
 ## pre-commit
 
-[フック定義](.pre-commit-hooks.yaml)は `entry: didit --staged`、`language: node`、`pass_filenames: false` です。公開先URL・リビジョンは未確定なので、リモート設定は公開前に確認してください。ローカルパッケージを入れたプレビューでは次の設定を使えます（pre-commit 本体は別途必要）。
+[フック定義](.pre-commit-hooks.yaml)は `entry: didit --staged`、`language: node`、`pass_filenames: false` です。公開先は https://github.com/mizuho-Te/didit です。リモート設定では確認済みのリビジョンを固定してください。ローカルパッケージを入れたプレビューでは次の設定を使えます（pre-commit 本体は別途必要）。
 
 ```yaml
 repos:
@@ -168,7 +168,7 @@ repos:
 
 ## 貢献と公開準備
 
-[貢献方法](CONTRIBUTING.md)、[ルール案](docs/rule-ideas.md)、[変更履歴](CHANGELOG.md)、[行動規範](CODE_OF_CONDUCT.md)、[セキュリティ方針](SECURITY.md)。非公開の連絡先は管理者による設定待ちです。公開用文章は下書きであり、投稿していません。公開前にリポジトリURL、npm名、ホスト型CI、連絡先、別環境での導入を確認してください。
+[貢献方法](CONTRIBUTING.md)、[ルール案](docs/rule-ideas.md)、[変更履歴](CHANGELOG.md)、[行動規範](CODE_OF_CONDUCT.md)、[セキュリティ方針](SECURITY.md)。[脆弱性の非公開報告](https://github.com/mizuho-Te/didit/security/advisories/new)は有効です。公開用文章は下書きであり、投稿していません。npm名、ホスト型CIの全組み合わせ、別環境での導入は引き続き確認が必要です。
 
 ## ライセンス
 

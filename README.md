@@ -12,7 +12,7 @@ The demo is a deliberately constructed example with a tiny Node test harness emi
 
 ## Try the local preview
 
-This is an **unpublished preview**. The npm name is provisional and ownership has not been verified. Do not fetch `npx didit` from the registry: it may refer to an unrelated package. Node.js 20+ and Git 2.30+ are required.
+This is a **[public GitHub preview](https://github.com/mizuho-Te/didit), not an npm release**. The npm name is provisional and ownership has not been verified. Do not fetch `npx didit` from the registry: it may refer to an unrelated package. Node.js 20+ and Git 2.30+ are required.
 
 From a trusted checkout:
 
@@ -141,7 +141,7 @@ New suppression comments remain visible in the report. `.didit.json` changes are
 
 ## pre-commit
 
-[The hook manifest](.pre-commit-hooks.yaml) defines `entry: didit --staged`, `language: node`, and `pass_filenames: false`. A remote pre-commit configuration must wait for a verified repository URL and reviewed revision; neither is invented here. For this preview, after installing the local package, a local system hook can use its binary:
+[The hook manifest](.pre-commit-hooks.yaml) defines `entry: didit --staged`, `language: node`, and `pass_filenames: false`. The public repository is https://github.com/mizuho-Te/didit; pin a reviewed revision before configuring a remote hook. For this preview, after installing the local package, a local system hook can use its binary:
 
 ```yaml
 repos:
@@ -170,7 +170,7 @@ Install/configure the pre-commit framework separately. The remote Node hook inst
 
 ## Contribute and release status
 
-See [CONTRIBUTING](CONTRIBUTING.md), [rule ideas](docs/rule-ideas.md), [the changelog](CHANGELOG.md), [Code of Conduct](CODE_OF_CONDUCT.md), and [security policy](SECURITY.md). Private reporting contacts still need maintainer configuration. Launch text is draft material only. TODO before public release: verify the final repository URL, package ownership, hosted checks, contacts, and installation on independent systems.
+See [CONTRIBUTING](CONTRIBUTING.md), [rule ideas](docs/rule-ideas.md), [the changelog](CHANGELOG.md), [Code of Conduct](CODE_OF_CONDUCT.md), and [security policy](SECURITY.md). [Private vulnerability reporting](https://github.com/mizuho-Te/didit/security/advisories/new) is enabled. Launch text is draft material only. Package ownership, the complete hosted CI matrix, and installation on independent systems remain release checks.
 
 ## License
 

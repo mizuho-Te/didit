@@ -2,15 +2,15 @@
 
 ## Supported versions
 
-There is no public release yet. Only the current development code is being maintained; no production security-support guarantee is offered for the v0.2 preview.
+The v0.2 source preview is public on [GitHub](https://github.com/mizuho-Te/didit), but there is no npm release. Only the current development code is being maintained; no production security-support guarantee is offered for the v0.2 preview.
 
 ## Reporting a vulnerability
 
 Do not disclose vulnerabilities, exploit details, credentials, or private repository contents in a public issue or pull request.
 
-A verified private reporting contact has not yet been supplied. Before public release, the maintainer must enable GitHub private vulnerability reporting on the final repository or publish a monitored private security contact here. No such channel is claimed to exist today. Until then, ask the maintainer through an already-established private channel for a safe reporting route, without including sensitive details in a public request.
+GitHub private vulnerability reporting is enabled. Use [Report a vulnerability](https://github.com/mizuho-Te/didit/security/advisories/new) to submit a private report to the repository maintainers.
 
-Once a private route is available, include the affected version or commit, a minimal reproduction, impact, and any suggested mitigation. Remove secrets and unrelated personal information. Response timelines will be published when maintainers and the reporting channel are established.
+Include the affected version or commit, a minimal reproduction, impact, and any suggested mitigation. Remove secrets and unrelated personal information. No response-time or remediation guarantee is offered for this preview.
 
 ## Security boundaries
 
