@@ -1,0 +1,6 @@
+- id: didit
+  name: didit
+  description: Review staged changes for weakened verification
+  entry: didit --staged
+  language: node
+  pass_filenames: false

@@ -1,0 +1,361 @@
+{
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "tool": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "const": "didit"
+        },
+        "version": {
+          "type": "string"
+        }
+      },
+      "required": ["name", "version"],
+      "additionalProperties": false
+    },
+    "generatedAt": {
+      "type": "string"
+    },
+    "lang": {
+      "enum": ["en", "ja"]
+    },
+    "range": {
+      "type": "object",
+      "properties": {
+        "mode": {
+          "enum": ["worktree", "staged", "commit"]
+        },
+        "base": {
+          "type": "object",
+          "properties": {
+            "ref": {
+              "type": "string"
+            },
+            "sha": {
+              "type": "string"
+            }
+          },
+          "required": ["ref", "sha"],
+          "additionalProperties": false
+        },
+        "current": {
+          "type": "object",
+          "properties": {
+            "ref": {
+              "type": "string"
+            },
+            "sha": {
+              "type": "string"
+            },
+            "dirty": {
+              "type": "boolean"
+            }
+          },
+          "required": ["ref", "sha", "dirty"],
+          "additionalProperties": false
+        }
+      },
+      "required": ["mode", "base", "current"],
+      "additionalProperties": false
+    },
+    "summary": {
+      "type": "object",
+      "properties": {
+        "filesChanged": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "filesSkipped": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "high": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "medium": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "low": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "suppressed": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "failOn": {
+          "enum": ["high", "medium", "low", "none"]
+        },
+        "failed": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "filesChanged",
+        "filesSkipped",
+        "high",
+        "medium",
+        "low",
+        "suppressed",
+        "failOn",
+        "failed"
+      ],
+      "additionalProperties": false
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "ruleId": {
+            "type": "string"
+          },
+          "severity": {
+            "enum": ["high", "medium", "low"]
+          },
+          "category": {
+            "enum": [
+              "test-disabled",
+              "test-removed",
+              "assertion-weakened",
+              "expected-changed",
+              "suppression",
+              "config-weakened",
+              "ci-weakened",
+              "error-swallowed",
+              "test-env-branch",
+              "didit-config",
+              "run"
+            ]
+          },
+          "file": {
+            "type": "string"
+          },
+          "line": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "side": {
+            "enum": ["added", "removed", "file", "run"]
+          },
+          "message": {
+            "type": "string"
+          },
+          "before": {
+            "type": "string"
+          },
+          "after": {
+            "type": "string"
+          },
+          "suppressed": {
+            "type": "object",
+            "properties": {
+              "reason": {
+                "type": "string"
+              },
+              "source": {
+                "enum": ["comment", "config"]
+              }
+            },
+            "required": ["reason", "source"],
+            "additionalProperties": false
+          }
+        },
+        "required": ["ruleId", "severity", "category", "side", "message"],
+        "additionalProperties": false
+      }
+    },
+    "suppressionsAdded": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "file": {
+            "type": "string"
+          },
+          "line": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "ruleId": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          }
+        },
+        "required": ["file", "line", "reason"],
+        "additionalProperties": false
+      }
+    },
+    "runs": {
+      "type": "object",
+      "properties": {
+        "base": {
+          "type": "object",
+          "properties": {
+            "side": {
+              "enum": ["base", "current"]
+            },
+            "command": {
+              "type": "string"
+            },
+            "sha": {
+              "type": "string"
+            },
+            "dirty": {
+              "type": "boolean"
+            },
+            "startedAt": {
+              "type": "string"
+            },
+            "durationMs": {
+              "type": "number",
+              "minimum": 0
+            },
+            "exitCode": {
+              "type": ["integer", "null"]
+            },
+            "timedOut": {
+              "type": "boolean"
+            },
+            "parser": {
+              "enum": ["junit", "vitest", "jest", "pytest", "none"]
+            },
+            "counts": {
+              "type": "object",
+              "properties": {
+                "passed": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "failed": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "skipped": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "total": {
+                  "type": "integer",
+                  "minimum": 0
+                }
+              },
+              "required": ["passed", "failed", "skipped", "total"],
+              "additionalProperties": false
+            },
+            "logTail": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "side",
+            "command",
+            "sha",
+            "dirty",
+            "startedAt",
+            "durationMs",
+            "exitCode",
+            "timedOut",
+            "parser",
+            "logTail"
+          ],
+          "additionalProperties": false
+        },
+        "current": {
+          "type": "object",
+          "properties": {
+            "side": {
+              "enum": ["base", "current"]
+            },
+            "command": {
+              "type": "string"
+            },
+            "sha": {
+              "type": "string"
+            },
+            "dirty": {
+              "type": "boolean"
+            },
+            "startedAt": {
+              "type": "string"
+            },
+            "durationMs": {
+              "type": "number",
+              "minimum": 0
+            },
+            "exitCode": {
+              "type": ["integer", "null"]
+            },
+            "timedOut": {
+              "type": "boolean"
+            },
+            "parser": {
+              "enum": ["junit", "vitest", "jest", "pytest", "none"]
+            },
+            "counts": {
+              "type": "object",
+              "properties": {
+                "passed": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "failed": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "skipped": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "total": {
+                  "type": "integer",
+                  "minimum": 0
+                }
+              },
+              "required": ["passed", "failed", "skipped", "total"],
+              "additionalProperties": false
+            },
+            "logTail": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "side",
+            "command",
+            "sha",
+            "dirty",
+            "startedAt",
+            "durationMs",
+            "exitCode",
+            "timedOut",
+            "parser",
+            "logTail"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": ["current"],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "tool",
+    "generatedAt",
+    "lang",
+    "range",
+    "summary",
+    "findings",
+    "suppressionsAdded"
+  ],
+  "additionalProperties": false,
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

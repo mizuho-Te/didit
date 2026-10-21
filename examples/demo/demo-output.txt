@@ -1,0 +1,21 @@
+didit — HEAD...working-tree (changed files: 4)
+
+high cart.test.cjs:2 Test was skipped [test-skip-added]
+  + it.skip("discount cap", () => { expect(total()).toBe(900); });
+high cart.test.cjs Number of tests decreased (3 → 2) [test-case-removed]
+high cart.test.cjs:3 Assertion was weakened [assertion-weakened]
+  - it("discount cap", () => { expect(total()).toBe(900); });
+  + it("total matches spec", () => { expect(total()).toBeDefined(); });
+high package.json Test command was weakened [test-script-weakened]
+  - node runner.cjs
+  + node runner.cjs --passWithNoTests
+high  More tests were skipped (0 → 1) [run-skipped-increased]
+medium src/api.ts:1 Type error suppression added [ts-suppress-added]
+  + // @ts-expect-error
+
+Test execution: npm test
+  base (f13735c7e2664880c32c5c54f0d49772fac5f612) 3 passed / 0 failed / 0 skipped
+  current (f13735c7e2664880c32c5c54f0d49772fac5f612+dirty) 2 passed / 0 failed / 1 skipped
+
+Result: high 5 / medium 1 / low 0 (suppressed 0; files skipped 0)
+Review every finding. If intentional, explain it with // didit-ok: reason.

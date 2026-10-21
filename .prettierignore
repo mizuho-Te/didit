@@ -1,0 +1,10 @@
+node_modules/
+dist/
+coverage/
+package-lock.json
+AGENTS.md
+docs/SPEC.md
+docs/RULES.md
+docs/TASKS.md
+docs/GROWTH.md
+LICENSE
