@@ -1,0 +1,6 @@
+Command: node dist/cli.js --format json (fresh synthetic Git repository)
+Environment: Linux x64, Node 24.19.0
+Files: 50
+Changed lines: 2000
+Elapsed including Node startup: 374.2 ms
+Exit: 0

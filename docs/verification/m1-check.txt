@@ -1,0 +1,116 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> didit@0.1.0 check
+> npm run lint && npm run typecheck && npm test
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> didit@0.1.0 lint
+> eslint . --max-warnings 0 && prettier --check .
+
+Checking formatting...
+All matched files use Prettier code style!
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> didit@0.1.0 typecheck
+> tsc --noEmit
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> didit@0.1.0 test
+> vitest run --coverage
+
+
+ RUN  v3.2.7 <repo>
+      Coverage enabled with v8
+
+ ✓ test/diff/parse.test.ts (18 tests) 19ms
+ ✓ test/rules/expected-value-changed.test.ts (8 tests) 10ms
+ ✓ test/options.test.ts (9 tests) 17ms
+ ✓ test/rules/registry.test.ts (5 tests) 23ms
+ ✓ test/entrypoint.test.ts (1 test) 258ms
+ ✓ test/repo.test.ts (12 tests) 397ms
+ ✓ test/rules/snapshot-updated.test.ts (5 tests) 4ms
+ ✓ test/rules/test-skip-added.test.ts (9 tests) 6ms
+ ✓ test/cli.test.ts (7 tests) 13ms
+ ✓ test/rules/assertion-weakened.test.ts (8 tests) 13ms
+ ✓ test/rules/assertion-count-decreased.test.ts (5 tests) 10ms
+ ✓ test/rules/helpers.test.ts (5 tests) 11ms
+ ✓ test/rules/empty-catch-added.test.ts (10 tests) 8ms
+ ✓ test/rules/test-case-removed.test.ts (6 tests) 6ms
+ ✓ test/rules/test-only-added.test.ts (6 tests) 8ms
+ ✓ test/rules/ts-suppress-added.test.ts (10 tests) 8ms
+ ✓ test/rules/lint-disable-added.test.ts (7 tests) 6ms
+ ✓ test/rules/any-added.test.ts (9 tests) 10ms
+ ✓ test/i18n.test.ts (1 test) 3ms
+ ✓ test/rules/test-file-deleted.test.ts (5 tests) 3ms
+ ✓ test/e2e/check.test.ts (8 tests) 1009ms
+stdout | test/git/diff.test.ts > Git range and diff collection > collects 50 files and 2,000 changed lines in under one second
+Git/diff benchmark: 245.6ms (linux, x64, Node v24.19.0)
+
+ ✓ test/git/diff.test.ts (10 tests) 1451ms
+   ✓ Git range and diff collection > collects 50 files and 2,000 changed lines in under one second  319ms
+
+ Test Files  22 passed (22)
+      Tests  164 passed (164)
+   Start at  22:05:22
+   Duration  2.20s (transform 814ms, setup 0ms, collect 1.98s, tests 3.29s, environment 10ms, prepare 2.31s)
+
+ % Coverage report from v8
+-------------------|---------|----------|---------|---------|-------------------
+File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-------------------|---------|----------|---------|---------|-------------------
+All files          |   97.43 |    94.23 |   95.23 |   97.43 |                   
+ src               |   98.78 |    92.64 |     100 |   98.78 |                   
+  cli-app.ts       |   96.42 |    80.95 |     100 |   96.42 | 37,48             
+  cli.ts           |     100 |      100 |     100 |     100 |                   
+  options.ts       |     100 |    97.87 |     100 |     100 | 59                
+ src/commands      |    91.3 |    88.88 |      75 |    91.3 |                   
+  check.ts         |    91.3 |    88.88 |      75 |    91.3 | 13-14,35-38       
+ src/diff          |     100 |      100 |     100 |     100 |                   
+  classify.ts      |     100 |      100 |     100 |     100 |                   
+  parse.ts         |     100 |      100 |     100 |     100 |                   
+ src/git           |   99.68 |    92.59 |     100 |   99.68 |                   
+  content.ts       |     100 |     97.5 |     100 |     100 | 23                
+  diff.ts          |     100 |    89.58 |     100 |     100 | ...14,132,134-139 
+  exec.ts          |     100 |    81.81 |     100 |     100 | 10,39             
+  range.ts         |   98.61 |    94.44 |     100 |   98.61 | 42                
+ src/i18n          |   99.04 |    84.61 |   66.66 |   99.04 |                   
+  en.ts            |     100 |      100 |     100 |     100 |                   
+  git-errors.ts    |    87.5 |      100 |       0 |    87.5 | 4                 
+  index.ts         |     100 |    84.61 |     100 |     100 | 12                
+  ja.ts            |     100 |      100 |     100 |     100 |                   
+ src/report        |      56 |       70 |     100 |      56 |                   
+  json.ts          |     100 |      100 |     100 |     100 |                   
+  text.ts          |   53.19 |    66.66 |     100 |   53.19 | 22-30,32-37,39-45 
+ src/rules         |     100 |    98.13 |     100 |     100 |                   
+  any-added.ts     |     100 |      100 |     100 |     100 |                   
+  ...-decreased.ts |     100 |    88.88 |     100 |     100 | 11                
+  ...n-weakened.ts |     100 |      100 |     100 |     100 |                   
+  ...atch-added.ts |     100 |      100 |     100 |     100 |                   
+  ...ue-changed.ts |     100 |      100 |     100 |     100 |                   
+  index.ts         |     100 |      100 |     100 |     100 |                   
+  ...able-added.ts |     100 |      100 |     100 |     100 |                   
+  ...ot-updated.ts |     100 |      100 |     100 |     100 |                   
+  ...se-removed.ts |     100 |    85.71 |     100 |     100 | 11                
+  ...le-deleted.ts |     100 |      100 |     100 |     100 |                   
+  ...only-added.ts |     100 |      100 |     100 |     100 |                   
+  ...skip-added.ts |     100 |      100 |     100 |     100 |                   
+  ...ress-added.ts |     100 |      100 |     100 |     100 |                   
+  types.ts         |       0 |        0 |       0 |       0 |                   
+ src/rules/lib     |     100 |    97.67 |     100 |     100 |                   
+  count.ts         |     100 |      100 |     100 |     100 |                   
+  create.ts        |     100 |    95.45 |     100 |     100 | 34                
+  pairing.ts       |     100 |      100 |     100 |     100 |                   
+  patterns.ts      |     100 |      100 |     100 |     100 |                   
+-------------------|---------|----------|---------|---------|-------------------
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice

@@ -1,0 +1,105 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> didit@0.2.0 check
+> npm run lint && npm run typecheck && npm test
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> didit@0.2.0 lint
+> eslint . --max-warnings 0 && prettier --check .
+
+Checking formatting...
+All matched files use Prettier code style!
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> didit@0.2.0 typecheck
+> tsc --noEmit
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> didit@0.2.0 test
+> vitest run --coverage
+
+
+ RUN  v4.1.12 <repo>
+      Coverage enabled with v8
+
+
+ Test Files  44 passed (44)
+      Tests  378 passed (378)
+   Start at  22:40:37
+   Duration  5.33s (transform 2.95s, setup 0ms, import 7.93s, tests 15.44s, environment 5ms)
+
+ % Coverage report from v8
+-------------------|---------|----------|---------|---------|-------------------
+File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-------------------|---------|----------|---------|---------|-------------------
+All files          |   96.02 |    92.45 |   96.67 |   96.89 |                   
+ src               |   97.68 |    93.49 |   95.23 |   98.78 |                   
+  cli-app.ts       |    93.1 |       80 |      75 |   92.85 | 41,64             
+  config.ts        |     100 |    93.93 |     100 |     100 | 96-99             
+  options.ts       |   97.87 |    97.61 |     100 |     100 | 59                
+  suppress.ts      |   98.52 |    96.87 |     100 |     100 | 36,78             
+ src/commands      |   95.37 |       88 |   96.15 |   97.54 |                   
+  check.ts         |   96.66 |     87.5 |      90 |   96.66 | 18                
+  hook.ts          |     100 |       92 |     100 |     100 | 60,74             
+  init.ts          |   92.85 |    85.29 |     100 |   96.66 | 65,172,189        
+ src/git           |   92.23 |    89.15 |   97.14 |   94.62 |                   
+  content.ts       |   95.83 |    97.72 |     100 |     100 | 24                
+  diff.ts          |   95.58 |    91.52 |     100 |   98.36 | 139               
+  exec.ts          |   95.23 |    89.47 |     100 |     100 | 10,75             
+  range.ts         |   93.54 |    94.59 |     100 |   96.29 | 42                
+  worktree.ts      |   85.48 |    75.47 |    87.5 |   85.96 | ...18-124,127,132 
+ src/i18n          |   94.44 |    86.95 |   86.66 |   94.28 |                   
+  git-errors.ts    |      50 |      100 |       0 |      50 | 4                 
+  index.ts         |     100 |    86.66 |     100 |     100 | 12                
+  ...n-messages.ts |      80 |      100 |   66.66 |      80 | 34                
+  ...t-messages.ts |     100 |       50 |     100 |     100 | 62                
+ src/report        |   94.69 |    88.65 |     100 |   94.21 |                   
+  handoff.ts       |   97.01 |    86.11 |     100 |   96.66 | 58,95             
+  markdown.ts      |   84.37 |    83.33 |     100 |   83.33 | 40,53-63          
+  text.ts          |     100 |    94.59 |     100 |     100 | 36,50             
+ src/rules         |   99.52 |    96.33 |     100 |   99.48 |                   
+  ci-weakened.ts   |     100 |    93.75 |     100 |     100 | 26                
+  ...ld-lowered.ts |     100 |    81.81 |     100 |     100 | 20,42             
+  ...ig-changed.ts |   96.29 |    86.66 |     100 |   96.15 | 48                
+  ...ue-changed.ts |     100 |    97.77 |     100 |     100 | 32                
+ src/rules/lib     |      98 |    97.77 |   95.45 |   97.77 |                   
+  create.ts        |     100 |    94.11 |     100 |     100 | 43                
+  pairing.ts       |   94.11 |      100 |   83.33 |   93.33 | 29                
+ src/run           |   94.28 |    90.74 |   86.36 |   94.89 |                   
+  kill.ts          |      60 |    77.77 |   33.33 |   55.55 | 5-11,24           
+  runner.ts        |   97.77 |     92.5 |   93.33 |    98.8 | 181               
+ src/run/parsers   |   97.59 |    96.66 |     100 |   98.66 |                   
+  junit.ts         |   98.18 |    97.29 |     100 |   97.95 | 81                
+  text.ts          |   95.45 |    94.11 |     100 |     100 | 38                
+ test/helpers      |   89.28 |    84.61 |     100 |   89.28 |                   
+  repo.ts          |   89.28 |    84.61 |     100 |   89.28 | 68,80-81          
+-------------------|---------|----------|---------|---------|-------------------
+
+=============================== Coverage summary ===============================
+Statements   : 96.02% ( 1207/1257 )
+Branches     : 92.45% ( 992/1073 )
+Functions    : 96.67% ( 262/271 )
+Lines        : 96.89% ( 1125/1161 )
+================================================================================
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice

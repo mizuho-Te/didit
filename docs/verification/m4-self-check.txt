@@ -1,0 +1,15 @@
+didit — 68e0b672524e4568e5af150370ee346d97243876...working-tree (changed files: 10)
+
+high test/commands/integrations.test.ts:277 Test was skipped [test-skip-added]
+  +         (_, index) => `test.skip("case ${String(index)}", () => {});`,
+high test/commands/integrations.test.ts:290 Test was skipped [test-skip-added]
+  +     await repo.write('sample.test.ts', 'test.skip("case", () => {});');
+high test/commands/integrations.test.ts:215 .only restricts which tests run [test-only-added]
+  +     await repo.write('sample.test.ts', 'test.only("example", () => {});');
+
+Tests were not run.
+
+Result: high 3 / medium 0 / low 0 (suppressed 0; files skipped 0)
+Review every finding. If intentional, explain it with // didit-ok: reason.
+
+Exit code: 1

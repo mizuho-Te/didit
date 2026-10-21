@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" role="img" aria-labelledby="title desc">
+  <title id="title">didit: review what changed to make tests pass</title>
+  <desc id="desc">Local Git diff checks. A synthetic terminal example highlights a skipped test and a weakened assertion. Unpublished preview, MIT.</desc>
+  <rect width="1280" height="640" fill="#0c1324"/>
+  <circle cx="1140" cy="65" r="260" fill="#152a40"/>
+  <text x="72" y="106" fill="#79e7ca" font-family="sans-serif" font-weight="700" font-size="64">didit</text>
+  <text x="72" y="167" fill="#f1f5fc" font-family="sans-serif" font-size="32">Tests passed. What changed to make them pass?</text>
+  <text x="72" y="207" fill="#b9c8df" font-family="sans-serif" font-size="22">Local Git diff checks · No LLM · MIT · Unpublished preview</text>
+  <rect x="72" y="249" width="1136" height="300" rx="16" fill="#060d18" stroke="#35506c" stroke-width="2"/>
+  <circle cx="103" cy="276" r="7" fill="#ff8091"/>
+  <circle cx="126" cy="276" r="7" fill="#f4cb77"/>
+  <circle cx="149" cy="276" r="7" fill="#79e7ca"/>
+  <text x="100" y="326" fill="#dce6f4" font-family="monospace" font-size="22">$ npx --no-install didit</text>
+  <text x="100" y="375" fill="#ffb5be" font-family="monospace" font-size="21">high  test-skip-added</text>
+  <text x="120" y="409" fill="#b9c8df" font-family="monospace" font-size="21">it("discount") → it.skip("discount")</text>
+  <text x="100" y="457" fill="#ffb5be" font-family="monospace" font-size="21">high  assertion-weakened</text>
+  <text x="120" y="491" fill="#b9c8df" font-family="monospace" font-size="21">toBe(900) → toBeDefined()</text>
+  <text x="72" y="596" fill="#b9c8df" font-family="sans-serif" font-size="19">Synthetic illustration, not a captured incident. Review signals, not a verdict on intent.</text>
+</svg>

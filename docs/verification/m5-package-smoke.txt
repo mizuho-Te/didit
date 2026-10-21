@@ -1,0 +1,44 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+changed 1 package in 240ms
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+0.2.0
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+didit — review weakened verification in Git changes
+Usage: didit [check] [options]
+       didit rules
+       didit init [claude|agents|cursor|copilot]
+       didit hook claude
+       didit --version | --help
+Options:
+  --base <ref> --head <ref> --staged
+  --run <command> --no-base-run --junit <glob> --timeout <sec>
+  --format <text|json|markdown> --fail-on <high|medium|low|none>
+  --handoff --goal <text> --out-dir <dir>
+  --lang <en|ja> --config <path> --quiet --no-color
+Exit codes: 0 no threshold findings; 1 findings; 2 usage/runtime error.
+Claude hook: 0 continue stopping; 2 request fixes; 1 nonblocking tool error.
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+test-skip-added [high] Test was skipped
+test-only-added [high] .only restricts which tests run
+test-file-deleted [high] Test file was deleted
+test-case-removed [high] Number of tests decreased ({before} → {after})
+assertion-count-decreased [high] Number of assertions decreased ({before} → {after})
+assertion-weakened [high] Assertion was weakened
+expected-value-changed [medium] Expected value changed — confirm the spec changed, not the test adapted to a bug
+snapshot-updated [low] Snapshot changed ({lines} lines) — confirm it was intended
+ts-suppress-added [medium] Type error suppression added
+any-added [low] 'any' type added
+lint-disable-added [medium] Lint rule disabled
+empty-catch-added [medium] Error is silently swallowed
+py-test-skip-added [high] Test was skipped or marked as expected failure
+py-suppress-added [medium] Type/lint suppression added
+tsconfig-loosened [medium] TypeScript check loosened: {option}
+test-script-weakened [high] Test command was weakened
+coverage-threshold-lowered [medium] Coverage threshold lowered ({key}: {before} → {after})
+ci-weakened [high] CI check was weakened or removed
+test-env-branch-added [high] Production code behaves differently under tests
+didit-config-changed [medium] didit configuration changed: {detail}
+run-tests-failing [high] Tests are failing
+run-test-count-decreased [high] Fewer tests ran
+run-skipped-increased [high] More tests were skipped

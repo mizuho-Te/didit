@@ -1,0 +1,18 @@
+didit — 9f99b0ea3a187617db7ece762b9a88cfa22eacef...working-tree (changed files: 42)
+
+medium test/commands/integrations.test.ts:74 Expected value changed — confirm the spec changed, not the test adapted to a bug [expected-value-changed]
+  -       expect(once).toContain('npx didit --run "<test command>"');
+  +       expect(once).toContain('npx --no-install didit --run "<test command>"');
+medium test/entrypoint.test.ts:16 Expected value changed — confirm the spec changed, not the test adapted to a bug [expected-value-changed]
+  -   expect(stdout).toHaveBeenCalledWith('0.1.0\n');
+  +   expect(stdout).toHaveBeenCalledWith('0.2.0\n');
+low examples/demo/setup.mjs:96 Type error suppression added [ts-suppress-added]
+  +     '// @ts-expect-error\nexport const message: string = 123;\n',
+
+Suppressions added in this change
+  examples/demo/demo-output.txt:21 *: reason.
+
+Tests were not run.
+
+Result: high 0 / medium 2 / low 1 (suppressed 0; files skipped 1)
+Review every finding. If intentional, explain it with // didit-ok: reason.

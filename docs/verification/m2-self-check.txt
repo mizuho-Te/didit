@@ -1,0 +1,45 @@
+didit — d10dc1b341211262069f43d90f58cf2ce0d4e6f7...working-tree (changed files: 48)
+
+high test/e2e/config.test.ts:70 Test was skipped [test-skip-added]
+  +       'it.skip("pending", () => {});\nit("works", () => {});\nconst value: any = 1;\n',
+high test/e2e/config.test.ts:84 Test was skipped [test-skip-added]
+  +     await repo.write('fixtures/fake.test.ts', 'it.skip("ignored", () => {});');
+high test/e2e/config.test.ts:87 Test was skipped [test-skip-added]
+  +       'it.skip("ignored", () => {});',
+high test/e2e/config.test.ts:89 Test was skipped [test-skip-added]
+  +     await repo.write('checks/check.ts', 'it.skip("works", () => {});');
+high test/e2e/config.test.ts:138 Test was skipped [test-skip-added]
+  +     await repo.write('cart.test.ts', 'it.skip("works", () => {});\n');
+high test/report/text.test.ts:36 Test was skipped [test-skip-added]
+  +         after: 'it.skip("synthetic", testBody);',
+high test/report/text.test.ts:49 Test was skipped [test-skip-added]
+  +         + it.skip("synthetic", testBody);
+medium test/rules/registry.test.ts:7 Expected value changed — confirm the spec changed, not the test adapted to a bug [expected-value-changed]
+  -     expect(new Set(rules.map((rule) => rule.id)).size).toBe(12);
+  +     expect(new Set(rules.map((rule) => rule.id)).size).toBe(20);
+medium .didit.json didit configuration changed: added [didit-config-changed]
+medium test/rules/py-suppress-added.test.ts:69 Type error suppression added [ts-suppress-added]
+  +         await check(rule, '', '// @ts-ignore', {
+low test/e2e/config.test.ts:70 'any' type added [any-added]
+  +       'it.skip("pending", () => {});\nit("works", () => {});\nconst value: any = 1;\n',
+low test/suppress.test.ts:32 'any' type added [any-added]
+  +     '// didit-ok: SDK mismatch\nconst a: any = 1;',
+low test/suppress.test.ts:33 'any' type added [any-added]
+  +     'const a = 1;\nconst b: any = 1; /* didit-ok: SDK mismatch */',
+low test/suppress.test.ts:34 'any' type added [any-added]
+  +     '# didit-ok(any-added): SDK mismatch\nconst a: any = 1;',
+low test/suppress.test.ts:45 'any' type added [any-added]
+  +       apply('// didit-ok(test-skip-added): reason\nconst a: any = 1;')
+low test/suppress.test.ts:49 'any' type added [any-added]
+  +       apply('// didit-ok: reason\n\nconst a: any = 1;', { ...finding, line: 3 })
+low test/suppress.test.ts:54 'any' type added [any-added]
+  +     const result = apply('// didit-ok:  \nconst a: any = 1;');
+low test/suppress.test.ts:112 'any' type added [any-added]
+  +         '// didit-ok: old\nconst a: any = 1;',
+
+Tests were not run.
+
+Result: high 7 / medium 3 / low 8 (suppressed 0; files skipped 0)
+Review every finding. If intentional, explain it with // didit-ok: reason.
+
+Exit code: 1

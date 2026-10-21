@@ -1,0 +1,114 @@
+didit — HEAD...working-tree (changed files: 59)
+
+high test/e2e/check.test.ts:44 Test was skipped [test-skip-added]
+  +       'it.skip("discount", () => { expect(1).toBe(1); });\n',
+high test/e2e/check.test.ts:65 Test was skipped [test-skip-added]
+  +       'it.skip("discount", () => { expect(1).toBe(1); });\n',
+high test/e2e/check.test.ts:131 Test was skipped [test-skip-added]
+  +     await repo.write('new.test.ts', 'test.skip("synthetic", () => {});\n');
+high test/e2e/check.test.ts:84 .only restricts which tests run [test-only-added]
+  +       'it.only("discount", () => { expect(1).toBe(1); });\n',
+high test/e2e/check.test.ts:100 .only restricts which tests run [test-only-added]
+  +       'it.only("discount", () => { expect(1).toBe(1); });\n',
+high test/e2e/check.test.ts:138 .only restricts which tests run [test-only-added]
+  +     await repo.write('cart.test.ts', 'test.only("synthetic", () => {});\n');
+high test/rules/helpers.test.ts:11 Test was skipped [test-skip-added]
+  +         'test("a"); it.concurrent("b"); test.failing("c"); it.sequential("d"); test.each([1])("e"); it.skip("f"); test.todo("g");',
+high test/rules/registry.test.ts:26 Test was skipped [test-skip-added]
+  +     expect((await runRules(context('', 'it.skip("a")')))[0]?.severity).toBe(
+high test/rules/registry.test.ts:32 Test was skipped [test-skip-added]
+  +       await runRules(context('', 'it.skip("a")', { isBinary: true })),
+high test/rules/test-only-added.test.ts:8 .only restricts which tests run [test-only-added]
+  +       (await check(rule, '', 'it.only("works", () => {})')).length,
+high test/rules/test-only-added.test.ts:13 .only restricts which tests run [test-only-added]
+  +       (await check(rule, '', 'fdescribe("api", () => {})')).length,
+high test/rules/test-only-added.test.ts:25 .only restricts which tests run [test-only-added]
+  +     const ctx = context('', 'it.only("works", () => {})');
+high test/rules/test-only-added.test.ts:30 .only restricts which tests run [test-only-added]
+  +     const ctx = context('', 'it.only("works", () => {})');
+high test/rules/test-skip-added.test.ts:8 Test was skipped [test-skip-added]
+  +       (await check(rule, '', 'it.skip("discount cap", () => {})')).length,
+high test/rules/test-skip-added.test.ts:13 Test was skipped [test-skip-added]
+  +       (await check(rule, '', 'xdescribe("cart", () => {})')).length,
+high test/rules/test-skip-added.test.ts:18 Test was skipped [test-skip-added]
+  +       (await check(rule, '', 'test.todo("refund")')).length,
+high test/rules/test-skip-added.test.ts:23 Test was skipped [test-skip-added]
+  +       (await check(rule, '', 'test.skipIf(condition)("slow", () => {})'))
+high test/rules/test-skip-added.test.ts:37 Test was skipped [test-skip-added]
+  +       (await check(rule, '', 'it.skip("a")', { isTestFile: false })).length,
+high test/rules/test-skip-added.test.ts:41 Test was skipped [test-skip-added]
+  +     const ctx = context('', 'it.skip("discount cap", () => {})');
+high test/rules/test-skip-added.test.ts:46 Test was skipped [test-skip-added]
+  +     const ctx = context('', 'it.skip("discount cap", () => {})');
+medium test/entrypoint.test.ts:16 Expected value changed — confirm the spec changed, not the test adapted to a bug [expected-value-changed]
+  -   expect(stdout).toHaveBeenCalledWith('0.0.0-m0\n');
+  +   expect(stdout).toHaveBeenCalledWith('0.1.0\n');
+medium src/rules/lint-disable-added.ts:11 Lint rule disabled [lint-disable-added]
+  +         /eslint-disable|biome-ignore|oxlint-disable/.test(line.content),
+medium test/rules/empty-catch-added.test.ts:8 Error is silently swallowed [empty-catch-added]
+  +       (await check(rule, '', 'try { run(); } catch {}')).length,
+medium test/rules/empty-catch-added.test.ts:13 Error is silently swallowed [empty-catch-added]
+  +       (await check(rule, '', 'promise.catch(() => undefined)')).length,
+medium test/rules/empty-catch-added.test.ts:24 Error is silently swallowed [empty-catch-added]
+  +       (await check(rule, '', 'catch { /* ignore */ }')).length,
+medium test/rules/empty-catch-added.test.ts:43 Error is silently swallowed [empty-catch-added]
+  +     const ctx = context('', 'try { run(); } catch {}');
+medium test/rules/empty-catch-added.test.ts:48 Error is silently swallowed [empty-catch-added]
+  +     const ctx = context('', 'try { run(); } catch {}');
+medium test/rules/lint-disable-added.test.ts:8 Lint rule disabled [lint-disable-added]
+  +       (await check(rule, '', '// eslint-disable-next-line no-console')).length,
+medium test/rules/lint-disable-added.test.ts:17 Lint rule disabled [lint-disable-added]
+  +           '// biome-ignore lint/suspicious/noExplicitAny: SDK',
+medium test/rules/lint-disable-added.test.ts:23 Lint rule disabled [lint-disable-added]
+  +     expect((await check(rule, '', '// oxlint-disable')).length).toBeGreaterThan(
+medium test/rules/lint-disable-added.test.ts:34 Lint rule disabled [lint-disable-added]
+  +     const ctx = context('', '// eslint-disable-next-line no-console');
+medium test/rules/lint-disable-added.test.ts:39 Lint rule disabled [lint-disable-added]
+  +     const ctx = context('', '// eslint-disable-next-line no-console');
+medium test/rules/registry.test.ts:36 Type error suppression added [ts-suppress-added]
+  +     const ctx = context('', '// @ts-ignore');
+medium test/rules/ts-suppress-added.test.ts:7 Type error suppression added [ts-suppress-added]
+  +     expect((await check(rule, '', '// @ts-ignore')).length).toBeGreaterThan(0);
+medium test/rules/ts-suppress-added.test.ts:20 Type error suppression added [ts-suppress-added]
+  +     expect((await check(rule, '', '// @ts-nocheck')).length).toBeGreaterThan(0);
+medium test/rules/ts-suppress-added.test.ts:34 Type error suppression added [ts-suppress-added]
+  +     const ctx = context('', '// @ts-ignore');
+medium test/rules/ts-suppress-added.test.ts:39 Type error suppression added [ts-suppress-added]
+  +     const ctx = context('', '// @ts-ignore');
+low src/rules/any-added.ts:11 'any' type added [any-added]
+  +         /:\s*any\b|\bas\s+any\b|<any>|\bany\[\]/.test(line.content),
+low src/rules/ts-suppress-added.ts:15 Type error suppression added [ts-suppress-added]
+  +         const explanation = /@ts-expect-error\b(.*)/
+low test/rules/any-added.test.ts:8 'any' type added [any-added]
+  +       (await check(rule, '', 'const value: any = 1;')).length,
+low test/rules/any-added.test.ts:13 'any' type added [any-added]
+  +       (await check(rule, '', 'const value = other as any;')).length,
+low test/rules/any-added.test.ts:18 'any' type added [any-added]
+  +       (await check(rule, '', 'const value = <any>other;')).length,
+low test/rules/any-added.test.ts:23 'any' type added [any-added]
+  +       (await check(rule, '', 'const values: any[] = [];')).length,
+low test/rules/any-added.test.ts:34 'any' type added [any-added]
+  +       (await check(rule, '', 'const value: any = 1;', { language: 'js' }))
+low test/rules/any-added.test.ts:39 'any' type added [any-added]
+  +     const ctx = context('', 'const value: any = 1;');
+low test/rules/any-added.test.ts:44 'any' type added [any-added]
+  +     const ctx = context('', 'const value: any = 1;');
+low test/rules/registry.test.ts:15 Type error suppression added [ts-suppress-added]
+  +     const ctx = context('', '// @ts-expect-error: SDK compatibility');
+low test/rules/ts-suppress-added.test.ts:11 Type error suppression added [ts-suppress-added]
+  +       (await check(rule, '', '/* @ts-expect-error */')).length,
+low test/rules/ts-suppress-added.test.ts:16 Type error suppression added [ts-suppress-added]
+  +       (await check(rule, '', '// @ts-expect-error: upstream SDK bug')).length,
+low test/rules/ts-suppress-added.test.ts:48 Type error suppression added [ts-suppress-added]
+  +     (await check(rule, '', '// @ts-expect-error: SDK issue'))[0]?.severity,
+low test/rules/ts-suppress-added.test.ts:51 Type error suppression added [ts-suppress-added]
+  +     (await check(rule, '', '/* @ts-expect-error ab */'))[0]?.severity,
+low test/rules/ts-suppress-added.test.ts:54 Type error suppression added [ts-suppress-added]
+  +     (await check(rule, '', '// @ts-expect-error'))[0]?.severity,
+
+Tests were not run.
+
+Result: high 20 / medium 17 / low 15 (suppressed 0; files skipped 0)
+Review every finding. If intentional, explain it with // didit-ok: reason.
+
+Exit code: 1

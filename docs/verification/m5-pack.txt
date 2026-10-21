@@ -1,0 +1,86 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> didit@0.2.0 prepack
+> npm run build
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> didit@0.2.0 build
+> tsup
+
+CLI Building entry: src/cli.ts
+CLI Using tsconfig: tsconfig.json
+CLI tsup v8.5.1
+CLI Using tsup config: <repo>/tsup.config.ts
+CLI Target: node20
+CLI Cleaning output folder
+ESM Build start
+ESM dist/cli.js     103.36 KB
+ESM dist/cli.js.map 188.69 KB
+ESM ⚡️ Build success in 50ms
+[
+  {
+    "id": "didit@0.2.0",
+    "name": "didit",
+    "version": "0.2.0",
+    "size": 90775,
+    "unpackedSize": 345542,
+    "shasum": "448874cbbb45882a422ee5d9f63b0ba8d6b6a999",
+    "integrity": "sha512-QJI6Fp4Rmk4XBdtIcNy9BleP0lEizWFyRLY4SYR3pxAYN7FvuY++zCFXqFnEtH2MFe/NpDvY45RdalsDgoST1w==",
+    "filename": "didit-0.2.0.tgz",
+    "files": [
+      {
+        "path": "CHANGELOG.md",
+        "size": 1615,
+        "mode": 420
+      },
+      {
+        "path": "LICENSE",
+        "size": 1075,
+        "mode": 420
+      },
+      {
+        "path": "README.ja.md",
+        "size": 11547,
+        "mode": 420
+      },
+      {
+        "path": "README.md",
+        "size": 10957,
+        "mode": 420
+      },
+      {
+        "path": "SECURITY.md",
+        "size": 1815,
+        "mode": 420
+      },
+      {
+        "path": "THIRD_PARTY_NOTICES.md",
+        "size": 6509,
+        "mode": 420
+      },
+      {
+        "path": "dist/cli.js",
+        "size": 105841,
+        "mode": 493
+      },
+      {
+        "path": "dist/cli.js.map",
+        "size": 196342,
+        "mode": 420
+      },
+      {
+        "path": "package.json",
+        "size": 1242,
+        "mode": 420
+      },
+      {
+        "path": "schema/report.schema.json",
+        "size": 8599,
+        "mode": 420
+      }
+    ],
+    "entryCount": 10,
+    "bundled": []
+  }
+]
